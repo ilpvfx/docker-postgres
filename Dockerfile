@@ -1,12 +1,14 @@
-ARG PG_VERSION
+ARG POSTGRES_VERSION
 # Start with the official PostgreSQL image based on Debian
-FROM postgres:${PG_VERSION}
+FROM postgres:$POSTGRES_VERSION
+
+ARG POSTGRES_VERSION
 
 # Run package updates and install necessary packages
-RUN apt-get update \
+RUN set -x && apt-get update \
     # Install PostgreSQL development headers and PGXN client
     && apt-get install -y \
-        postgresql-server-dev-${PG_VERSION} \
+        postgresql-server-dev-$POSTGRES_VERSION \
         pgxnclient \
         make \
         gcc \
