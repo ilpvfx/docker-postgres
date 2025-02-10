@@ -1,3 +1,4 @@
+ARG PG_VERSION
 # Start with the official PostgreSQL image based on Debian
 FROM postgres:${PG_VERSION}
 
