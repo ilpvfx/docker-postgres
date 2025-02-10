@@ -1,6 +1,6 @@
 # Postgres with Temporal Tables
 
-> ![!WARNING]
+> [!WARNING]
 > PUBLIC IMAGE
 
 Follows the upstream postgres image major version tags (The build is on daily cron, see `./github/workflows/docker.yaml`.
