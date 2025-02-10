@@ -1,14 +1,14 @@
-ARG POSTGRES_VERSION
+ARG POSTGRES_TAG
 # Start with the official PostgreSQL image based on Debian
-FROM postgres:$POSTGRES_VERSION
+FROM postgres:$POSTGRES_TAG
 
-ARG POSTGRES_VERSION
 
 # Run package updates and install necessary packages
 RUN set -x && apt-get update \
-    # Install PostgreSQL development headers and PGXN client
+    # Install PostgreSQL development headers and PGXN client \
+    # PG_MAJOR is set by the upstream image
     && apt-get install -y \
-        postgresql-server-dev-$POSTGRES_VERSION \
+        postgresql-server-dev-$PG_MAJOR \
         pgxnclient \
         make \
         gcc \
